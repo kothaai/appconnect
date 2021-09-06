@@ -1,0 +1,10 @@
+
+
+CREATE COMPUTE MODULE QueueOutward_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.JSON.Data.responseCode = '000';
+		SET OutputRoot.JSON.Data.responseMessage = 'Dear Customer, Your Fund Transfer of Rs.' || Environment.Variables.amount || ' to ' || Environment.Variables.beneficiaryName || ' is succesful' ;
+		RETURN TRUE;
+	END;
+END MODULE;

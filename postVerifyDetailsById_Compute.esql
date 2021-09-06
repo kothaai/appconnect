@@ -1,0 +1,12 @@
+
+
+CREATE COMPUTE MODULE postVerifyDetailsById_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		--SET OutputLocalEnvironment.Destination.HTTP.RequestURL = 'http://localhost:8080/cbs/customer/verifyDetailsById';
+		SET OutputRoot.JSON.Data = InputRoot.JSON.Data;
+		RETURN TRUE;
+	END;
+
+	
+END MODULE;

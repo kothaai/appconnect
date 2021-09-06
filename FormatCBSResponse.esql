@@ -1,0 +1,12 @@
+
+
+CREATE COMPUTE MODULE FormatCBSResponse
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.JSON.Data.responseCode = '000';
+		SET OutputRoot.JSON.Data.responseMessage = 'Dear Customer, Your Fund Transfer of Rs.' || Environment.Variables.amount || ' to ' || Environment.Variables.accountNumber || ' is succesful' ;
+		
+		RETURN TRUE;
+	END;
+
+END MODULE;

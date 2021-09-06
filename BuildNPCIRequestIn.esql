@@ -1,0 +1,17 @@
+
+
+CREATE COMPUTE MODULE BuildNPCIRequestIn
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		SET Environment.Variables.accountNumber = InputRoot.JSON.Data.accountNumber;
+		SET Environment.Variables.beneficiaryName = InputRoot.JSON.Data.beneficiaryName;
+		SET Environment.Variables.beneficiaryAccountNumber = InputRoot.JSON.Data.beneficiaryAccountNumber;
+		SET Environment.Variables.beneficiaryIFSC = InputRoot.JSON.Data.beneficiaryIFSC;
+		SET Environment.Variables.amount = InputRoot.JSON.Data.amount;
+		SET Environment.Variables.remarks = InputRoot.JSON.Data.remarks;
+		SET Environment.Variables.transferType = 'debit';
+		
+		RETURN TRUE;
+	END;
+END MODULE;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:restapiDescriptor xmlns="http://com.ibm.etools.mft.descriptor.base" xmlns:ns2="http://com.ibm.etools.mft.descriptor.restapi" definitionType="swagger_20" definitionFile="swagger.json" implementation="gen/IndianBank.msgflow" https="false">
+    <ns2:operations>
+        <ns2:operation name="postAdd" implementation="postAdd.subflow"/>
+        <ns2:operation name="postBalance" implementation="postBalance.subflow"/>
+        <ns2:operation name="postDeregister" implementation="postDeregister.subflow"/>
+        <ns2:operation name="postInward" implementation="postInward.subflow"/>
+        <ns2:operation name="postOutward" implementation="postOutward.subflow"/>
+        <ns2:operation name="postRegister" implementation="postRegister.subflow"/>
+        <ns2:operation name="postRemove" implementation="postRemove.subflow"/>
+        <ns2:operation name="postTransfer" implementation="postTransfer.subflow"/>
+        <ns2:operation name="postVerifyDetailsById" implementation="postVerifyDetailsById.subflow"/>
+        <ns2:operation name="postView" implementation="postView.subflow"/>
+    </ns2:operations>
+    <ns2:errorHandlers/>
+</ns2:restapiDescriptor>

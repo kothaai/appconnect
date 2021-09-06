@@ -1,0 +1,21 @@
+
+
+CREATE COMPUTE MODULE postRegister_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		--SET OutputLocalEnvironment.Destination.HTTP.RequestURL = 'http://localhost:8080/cbs/customer/register' ;
+	/*SET OutputRoot = InputRoot;
+DECLARE ref1 REFERENCE TO OutputRoot.JSON.Data;
+DETACH ref1.applicationType;
+DETACH ref1.subApplicationType;
+DETACH ref1.deliveryChannelId;
+DETACH ref1.messageId;
+DETACH ref1.transactionDateTime;
+SET OutputRoot = ref1;
+SET OutputLocalEnvironment.Destination.REST.Request.Accept = 'application/json';*/
+SET OutputRoot.HTTPReplyHeader."Content-Type" = 'application/json';
+SET OutputRoot.JSON = InputRoot.JSON;
+		RETURN TRUE;
+	END;
+
+END MODULE;

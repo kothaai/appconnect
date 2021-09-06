@@ -1,0 +1,20 @@
+
+
+
+
+CREATE COMPUTE MODULE BuildNpciRequest
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+
+		SET OutputRoot.JSON.Data.beneficiaryName = Environment.Variables.beneficiaryName;
+		SET OutputRoot.JSON.Data.beneficiaryAccountNumber = Environment.Variables.beneficiaryAccountNumber;
+		SET OutputRoot.JSON.Data.beneficiaryIFSC = Environment.Variables.beneficiaryIFSC;
+		SET OutputRoot.JSON.Data.amount = Environment.Variables.amount;
+		SET OutputRoot.JSON.Data.remarks = Environment.Variables.remarks;
+		SET OutputRoot.JSON.Data.transferType = 'credit';
+
+		RETURN TRUE;
+	END;	
+
+
+END MODULE;
